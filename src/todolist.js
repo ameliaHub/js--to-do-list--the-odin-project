@@ -26,9 +26,16 @@ export class ToDoList{
         this.globalToDos.push(toDo);
     }
 
-    removeToDo(toDo){
-        this.globalToDos.pop(toDo);
+    removeToDo(toDo) {
+        // Eliminar de la lista global
+        this.globalToDos = this.globalToDos.filter(t => t !== toDo);
+    
+        // Buscar y eliminar el ToDo en cualquier proyecto en el que esté
+        this.projects.forEach(project => {
+            project.toDos = project.toDos.filter(t => t !== toDo);
+        });
     }
+    
 
     addProject(project){
         this.projects.push(project);
