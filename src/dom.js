@@ -7,6 +7,7 @@ import { ToDoList } from "./todolist";
 let toDoList;
 export function setUpDom(instance){
     toDoList = instance;
+    createAddToDoButton();
     displayToDos();
 }
 
