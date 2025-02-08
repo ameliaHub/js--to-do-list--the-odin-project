@@ -32,14 +32,14 @@ function createToDoElement(toDo, index){
     // Añadir el evento para eliminar ToDo
     const removeButton = toDoElement.querySelector(".removeToDoButton");
     removeButton.addEventListener("click", () => {
-        toDoList.removeToDo(index);  // Eliminar el ToDo
+        toDoList.removeToDo(toDo);  // Eliminar el ToDo
         displayToDos();
     });
 
     // Añadir el evento para cambiar el estado de completado
     const checkbox = toDoElement.querySelector(".completedCheckbox");
     checkbox.addEventListener("change", () => {
-        toDoList.toggleCompleted(index);  // Cambiar el estado de completado
+        toDoList.toggleCompleted(toDo);  // Cambiar el estado de completado
         displayToDos();
     });
 
