@@ -19,27 +19,7 @@ export class Project{
         }
     }
 
-    toggleCompleted(title){
-        const index = this.toDos.findIndex(toDo => toDo.title === title);
-
-        // Si encontramos el todo
-        if (index !== -1) {
-            this.toDos.at(index).toggleCompleted();  
-        } else {
-            console.log('ToDo not found');
-        }
-    }
-
-    changePriority(title, newPriority){
-        const index = this.toDos.findIndex(toDo => toDo.title === title);
-
-        // Si encontramos el todo
-        if (index !== -1) {
-            this.toDos.at(index).changePriority(newPriority);     
-        } else {
-            console.log('ToDo not found');
-        }
-    }
+    
 
     getToDos(){
        return this.toDos; 
