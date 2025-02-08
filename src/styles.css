@@ -1,0 +1,198 @@
+/*Reset general*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+    font-size: 16px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: normal; 
+}
+
+a {
+    text-decoration: none;
+    color: inherit; 
+}
+
+ul {
+    list-style: none; 
+}
+
+button {
+    border: none;
+    background: none;
+    font: inherit;
+    cursor: pointer;
+}
+
+/*CONTENEDOR*/
+.container{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1{
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #444;
+    text-align: center;
+}
+
+/*TO DO*/
+.toDo{
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    margin-bottom: 15px;
+    transition: all 0.2s ease;
+}
+
+.toDo:hover{
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15); 
+    transform: translateY(-2px);
+}
+
+.toDo h3 {
+    font-size: 1.4rem;
+    color: #333; 
+    margin: 0 0 10px 0; 
+}
+
+.toDo p {
+    font-size: 1rem;
+    color: #666; 
+    margin: 5px 0;
+}
+
+/*etiqueta del checkbox*/
+.toDo label {
+    display: flex;
+    align-items: center; 
+    
+    font-size: 1rem;
+    color: #333;
+    margin-top: 10px;
+}
+
+.completedCheckbox {
+    width: 18px; 
+    height: 18px;
+    margin-right: 10px; 
+    cursor: pointer; 
+}
+
+/* Estilo para el botón de eliminar */
+.removeToDoButton {
+    background-color: transparent; /* Fondo transparente */
+    max-width: fit-content;
+    color: #e74c3c; /* Color rojo para eliminar */
+    border: none; /* Sin borde */
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: color 0.2s ease; /* Transición para el color */
+}
+
+.removeToDoButton:hover {
+    color: #c0392b; /* Rojo más oscuro al pasar el ratón */
+}
+
+/* Estilo para cuando el checkbox está marcado (completado) */
+.completedCheckbox:checked + .todoText {
+    text-decoration: line-through; /* Tachar el texto cuando está marcado */
+    color: #999; /* Color más gris para el texto tachado */
+}
+
+
+/* Estilo para el botón "Nuevo ToDo" */
+#addToDoBtn {
+    padding: 12px 24px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 30px; /* Botón redondeado */
+    background-color: #007bff; /* Color azul */
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s ease;
+    text-transform: uppercase; /* Texto en mayúsculas para destacar */
+}
+
+/* Efecto al pasar el ratón sobre el botón */
+#addToDoBtn:hover {
+    background-color: #0056b3; /* Color más oscuro cuando el ratón pasa por encima */
+    transform: scale(1.05); /* Levemente más grande al pasar el ratón */
+}
+
+/* Efecto al hacer clic */
+#addToDoBtn:active {
+    transform: scale(1); /* Restablecer tamaño cuando se hace clic */
+}
+
+
+/* Reseteo de estilos para formularios */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    margin: 20px auto;
+}
+
+/* Estilos para inputs y select */
+form input, form select {
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: border-color 0.3s ease;
+}
+
+form input:focus, form select:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+/* Estilos para los botones */
+button[type="submit"], button[type="button"] {
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"] {
+    background-color: #007bff;
+    color: white;
+}
+
+button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+button[type="button"] {
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+button[type="button"]:hover {
+    background-color: #e0e0e0;
+}
+
