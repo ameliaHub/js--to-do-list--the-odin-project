@@ -3,6 +3,12 @@ import { Project } from "./project";
 
 console.log("HOLA");
 
+//const globalToDos = [];
+
+//function getGlobalToDos(){
+//    return globalToDos;
+//}
+
 const project = new Project("Prueba");
 
 const toDo1 = new ToDo('Comprar leche', 'Comprar leche en el supermercado', '2025-02-05', 'alta'); 
