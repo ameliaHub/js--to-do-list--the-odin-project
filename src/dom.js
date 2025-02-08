@@ -28,6 +28,21 @@ function createToDoElement(toDo, index){
         <button class="removeToDoButton" data-index="${index}">Eliminar</button>
     `;
 
+
+    // Añadir el evento para eliminar ToDo
+    const removeButton = toDoElement.querySelector(".removeToDoButton");
+    removeButton.addEventListener("click", () => {
+        toDoList.removeToDo(index);  // Eliminar el ToDo
+        displayToDos();
+    });
+
+    // Añadir el evento para cambiar el estado de completado
+    const checkbox = toDoElement.querySelector(".completedCheckbox");
+    checkbox.addEventListener("change", () => {
+        toDoList.toggleCompleted(index);  // Cambiar el estado de completado
+        displayToDos();
+    });
+
     return toDoElement;
 
 }
@@ -40,19 +55,7 @@ function displayToDos(){
     toDoList.getToDos().forEach((element,index) => {
         const toDoElement = createToDoElement(element, index);
         
-        // Añadir el evento para eliminar ToDo
-        const removeButton = toDoElement.querySelector(".removeToDoButton");
-        removeButton.addEventListener("click", () => {
-            toDoList.removeToDo(index);  // Eliminar el ToDo
-        });
-
-        // Añadir el evento para cambiar el estado de completado
-        const checkbox = toDoElement.querySelector(".completedCheckbox");
-        checkbox.addEventListener("change", () => {
-            toDoList.toggleCompleted(index);  // Cambiar el estado de completado
-        });
-
-         // Añadir el nuevo ToDo al contenedor
+        // Añadir el nuevo ToDo al contenedor
         toDoContainer.appendChild(toDoElement);
 
     });
