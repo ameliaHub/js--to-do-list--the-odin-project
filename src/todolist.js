@@ -45,15 +45,9 @@ export class ToDoList{
         this.projects.pop(project);
     }
 
-    toggleCompleted(title){
-        const index = this.globalToDos.findIndex(toDo => toDo.title === title);
-
-        // Si encontramos el todo
-        if (index !== -1) {
-            this.globalToDos.at(index).toggleCompleted();  
-        } else {
-            console.log('ToDo not found');
-        }
+    toggleCompleted(toDo){
+        toDo.toggleCompleted();  
+        
     }
 
     changePriority(title, newPriority){
