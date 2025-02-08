@@ -1,6 +1,15 @@
 
 import { ToDo } from "./todo";
 import { Project } from "./project";
+import { ToDoList } from "./todolist";
+
+
+let toDoList;
+export function setUpDom(instance){
+    toDoList = instance;
+    displayToDos();
+}
+
 
 //crea el HTML de un solo ToDo
 function createToDoElement(toDo, index){
@@ -8,12 +17,12 @@ function createToDoElement(toDo, index){
     toDoElement.classList.add("toDo");
 
     toDoElement.innerHTML=`
-        <h3>${todo.title}</h3>
-        <p>Descripción: ${todo.description}</p>
-        <p>Fecha de vencimiento: ${todo.dueDate}</p>
-        <p>Prioridad: ${todo.priority}</p>
+        <h3>${toDo.title}</h3>
+        <p>Descripción: ${toDo.description}</p>
+        <p>Fecha de vencimiento: ${toDo.dueDate}</p>
+        <p>Prioridad: ${toDo.priority}</p>
         <label>
-            <input type="checkbox" class="completedCheckbox" data-index="${index}" ${todo.completed ? "checked" : ""}>
+            <input type="checkbox" class="completedCheckbox" data-index="${index}" ${toDo.completed ? "checked" : ""}>
             Completado
         </label>
         <button class="removeToDoButton" data-index="${index}">Eliminar</button>
@@ -24,11 +33,11 @@ function createToDoElement(toDo, index){
 }
 
 //mostrar todos los ToDos
-function displayToDos(toDoList){
+function displayToDos(){
     const toDoContainer = document.getElementById("toDo-container");
     toDoContainer.innerHTML = "";
 
-    Project.getToDos().forEach((element,index) => {
+    toDoList.getToDos().forEach((element,index) => {
         const toDoElement = createToDoElement(element, index);
         
         // Añadir el evento para eliminar ToDo
