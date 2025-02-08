@@ -4,6 +4,8 @@ import { Project } from "./project";
 import { ToDoList } from "./todolist";
 import { setUpDom } from "./dom";
 
+import './styles.css'
+
 console.log("HOLA");
 
 //const globalToDos = [];
