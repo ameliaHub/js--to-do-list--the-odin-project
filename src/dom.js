@@ -24,7 +24,8 @@ function createToDoElement(toDo, index){
         <p>Prioridad: ${toDo.priority}</p>
         <label>
             <input type="checkbox" class="completedCheckbox" data-index="${index}" ${toDo.completed ? "checked" : ""}>
-            Completado
+            <span class="todoText">Completado</span>
+
         </label>
         <button class="removeToDoButton" data-index="${index}">Eliminar</button>
     `;
@@ -70,7 +71,7 @@ function createAddToDoButton(){
     const btnContainer = document.getElementById("button-container");
     const addToDoBtn = document.createElement("button");
     addToDoBtn.textContent = "Nuevo ToDo";
-    addToDoBtn.id = "addToDoButton";
+    addToDoBtn.id = "addToDoBtn";
 
     addToDoBtn.addEventListener("click", () =>{
         showToDoForm();
